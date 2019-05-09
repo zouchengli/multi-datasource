@@ -17,7 +17,7 @@ public class BaseDatasourceConfig {
         return getDataSource(properties.getUrl(), properties.getPassword(), properties.getUsername(), "secondDatasource", properties.getMinPoolSize(), properties.getMaxPoolSize(), properties.getMaxLifetime(), properties.getBorrowConnectionTimeout(), properties.getLoginTimeout(), properties.getMaintenanceInterval(), properties.getMaxIdleTime(), properties.getTestQuery());
     }
 
-    private DataSource getDataSource(String url, String password, String username, String secondDatasource, int minPoolSize, int maxPoolSize, int maxLifetime, int borrowConnectionTimeout, int loginTimeout, int maintenanceInterval, int maxIdleTime, String testQuery) throws SQLException {
+    private DataSource getDataSource(String url, String password, String username, String name, int minPoolSize, int maxPoolSize, int maxLifetime, int borrowConnectionTimeout, int loginTimeout, int maintenanceInterval, int maxIdleTime, String testQuery) throws SQLException {
         MysqlXADataSource mysqlXADataSource = new MysqlXADataSource();
         mysqlXADataSource.setUrl(url);
         mysqlXADataSource.setPinGlobalTxToPhysicalConnection(true);
@@ -26,7 +26,7 @@ public class BaseDatasourceConfig {
 
         AtomikosDataSourceBean atomikosDataSourceBean = new AtomikosDataSourceBean();
         atomikosDataSourceBean.setXaDataSource(mysqlXADataSource);
-        atomikosDataSourceBean.setUniqueResourceName(secondDatasource);
+        atomikosDataSourceBean.setUniqueResourceName(name);
         atomikosDataSourceBean.setMinPoolSize(minPoolSize);
         atomikosDataSourceBean.setMaxPoolSize(maxPoolSize);
         atomikosDataSourceBean.setMaxLifetime(maxLifetime);
