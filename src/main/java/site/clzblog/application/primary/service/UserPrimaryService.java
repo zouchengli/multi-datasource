@@ -13,7 +13,7 @@ public class UserPrimaryService {
         this.userPrimaryMapper = userPrimaryMapper;
     }
 
-    @Transactional(transactionManager = "primaryDataSourceTransactionManager")
+    //@Transactional(transactionManager = "primaryDataSourceTransactionManager")
     public Integer insert(String name) {
         User user = new User(0, name);
         return userPrimaryMapper.insert(user);

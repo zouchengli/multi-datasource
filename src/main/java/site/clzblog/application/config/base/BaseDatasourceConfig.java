@@ -1,7 +1,7 @@
 package site.clzblog.application.config.base;
 
 import com.atomikos.jdbc.AtomikosDataSourceBean;
-import com.mysql.jdbc.jdbc2.optional.MysqlXADataSource;
+import com.mysql.cj.jdbc.MysqlXADataSource;
 import site.clzblog.application.config.properties.PrimaryDatasourceProperties;
 import site.clzblog.application.config.properties.SecondDatasourceProperties;
 

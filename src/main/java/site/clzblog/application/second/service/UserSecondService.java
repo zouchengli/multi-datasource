@@ -13,7 +13,7 @@ public class UserSecondService {
         this.userSecondMapper = userSecondMapper;
     }
 
-    @Transactional(transactionManager = "secondDataSourceTransactionManager")
+    //@Transactional(transactionManager = "secondDataSourceTransactionManager")
     public Integer insert(String name) {
         User user = new User(0, name);
         return userSecondMapper.insert(user);

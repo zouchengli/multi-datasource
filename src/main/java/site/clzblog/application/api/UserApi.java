@@ -24,7 +24,7 @@ public class UserApi {
     @RequestMapping("insert")
     public String insert(String name1, String name2) {
         Integer insert = userPrimaryService.insert(name1);
-        //int i = 1/0;
+        int i = 1/0;
         Integer insert1 = userSecondService.insert(name2);
         log.info("{} {}", insert, insert1);
         return "success";
